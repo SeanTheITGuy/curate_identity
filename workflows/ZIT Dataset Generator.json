@@ -1,0 +1,2437 @@
+{
+  "id": "a9a6dc1e-70e5-4c8b-b027-1df0fabd2cae",
+  "revision": 0,
+  "last_node_id": 179,
+  "last_link_id": 273,
+  "nodes": [
+    {
+      "id": 66,
+      "type": "UNETLoader",
+      "pos": [
+        -1180.2023324316951,
+        -473.4100122004552
+      ],
+      "size": [
+        270,
+        82
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            81
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.73",
+        "Node name for S&R": "UNETLoader",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.7",
+          "input_ue_unconnectable": {}
+        },
+        "models": [
+          {
+            "name": "z_image_turbo_bf16.safetensors",
+            "url": "https://huggingface.co/Comfy-Org/z_image_turbo/resolve/main/split_files/diffusion_models/z_image_turbo_bf16.safetensors",
+            "directory": "diffusion_models"
+          }
+        ],
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        "ZIT/z_image_turbo_bf16.safetensors",
+        "default"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 64,
+      "type": "ConditioningZeroOut",
+      "pos": [
+        -529.0282100944207,
+        -846.2587074168192
+      ],
+      "size": [
+        204.134765625,
+        26
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 71
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            77,
+            215,
+            222
+          ]
+        }
+      ],
+      "title": "Negative",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.73",
+        "Node name for S&R": "ConditioningZeroOut",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.7",
+          "input_ue_unconnectable": {}
+        },
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 161,
+      "type": "ConditioningCombine",
+      "pos": [
+        -244.25765153196716,
+        -513.9680749717135
+      ],
+      "size": [
+        216.92578125,
+        46
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning_1",
+          "type": "CONDITIONING",
+          "link": 227
+        },
+        {
+          "name": "conditioning_2",
+          "type": "CONDITIONING",
+          "link": 228
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            229
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.20.1",
+        "Node name for S&R": "ConditioningCombine"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 69,
+      "type": "ModelSamplingAuraFlow",
+      "pos": [
+        -893.4661714212124,
+        -233.99346369071185
+      ],
+      "size": [
+        338.4259371365322,
+        58
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 82
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "slot_index": 0,
+          "links": [
+            75,
+            214,
+            224
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.64",
+        "Node name for S&R": "ModelSamplingAuraFlow",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.7",
+          "input_ue_unconnectable": {}
+        },
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        3
+      ],
+      "color": "#332922",
+      "bgcolor": "#593930"
+    },
+    {
+      "id": 67,
+      "type": "CLIPTextEncode",
+      "pos": [
+        -525.4850972115923,
+        -881.6598180630382
+      ],
+      "size": [
+        342.06474379799977,
+        322.7566258059311
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 153
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 234
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            71,
+            76,
+            228
+          ]
+        }
+      ],
+      "title": "Positive",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.73",
+        "Node name for S&R": "CLIPTextEncode",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.7",
+          "input_ue_unconnectable": {}
+        },
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        ""
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 62,
+      "type": "CLIPLoader",
+      "pos": [
+        -1180.2023324316951,
+        -345.23125149209073
+      ],
+      "size": [
+        270,
+        106
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            152,
+            226,
+            231
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.73",
+        "Node name for S&R": "CLIPLoader",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.7",
+          "input_ue_unconnectable": {}
+        },
+        "models": [
+          {
+            "name": "qwen_3_4b.safetensors",
+            "url": "https://huggingface.co/Comfy-Org/z_image_turbo/resolve/main/split_files/text_encoders/qwen_3_4b.safetensors",
+            "directory": "text_encoders"
+          }
+        ],
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        "QWEN/Qwen3-4b-Z-Image-Turbo-AbliteratedV1.safetensors",
+        "lumina2",
+        "default"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 173,
+      "type": "VAEDecode",
+      "pos": [
+        206.91835965313658,
+        -564.0486447582293
+      ],
+      "size": [
+        140,
+        46
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 261
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 262
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            263
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.21.0",
+        "Node name for S&R": "VAEDecode"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 63,
+      "type": "VAELoader",
+      "pos": [
+        -1180.2023324316951,
+        -193.05249078372617
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            262
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.73",
+        "Node name for S&R": "VAELoader",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.7",
+          "input_ue_unconnectable": {}
+        },
+        "models": [
+          {
+            "name": "ae.safetensors",
+            "url": "https://huggingface.co/Comfy-Org/z_image_turbo/resolve/main/split_files/vae/ae.safetensors",
+            "directory": "vae"
+          }
+        ],
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        "UltraFlux-v1.safetensors"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 163,
+      "type": "CLIPTextEncode",
+      "pos": [
+        -21.81123177849482,
+        -764.4013940627942
+      ],
+      "size": [
+        213.49630882024735,
+        215.1334237860358
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 231
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            242
+          ]
+        }
+      ],
+      "title": "3rd Pass Prompt",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.73",
+        "Node name for S&R": "CLIPTextEncode",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.7",
+          "input_ue_unconnectable": {}
+        },
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        "skin texture, blemishes, moles, fine hairs, wrinkles. detailed eyelashes."
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 160,
+      "type": "CLIPTextEncode",
+      "pos": [
+        -251.62265174666143,
+        -767.4436084345307
+      ],
+      "size": [
+        210,
+        217.9127797989354
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 226
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            227
+          ]
+        }
+      ],
+      "title": "2nd Pass Prompt",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.73",
+        "Node name for S&R": "CLIPTextEncode",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.7",
+          "input_ue_unconnectable": {}
+        },
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        "micro-contrast, subtle skin variation, natural uneven skin tone. accurate skin detail, visible pores. subtle natural asymmetry. highly detailed, realistic hair. realistic detailed eyes."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 68,
+      "type": "EmptySD3LatentImage",
+      "pos": [
+        -1180.2023324316951,
+        -88.87373007536142
+      ],
+      "size": [
+        269.2119339966496,
+        109.11823765751012
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [
+            78
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.64",
+        "Node name for S&R": "EmptySD3LatentImage",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.7",
+          "input_ue_unconnectable": {}
+        },
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        1024,
+        1536,
+        1
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 76,
+      "type": "SaveImage",
+      "pos": [
+        210.33664288359893,
+        -475.00049397398624
+      ],
+      "size": [
+        628.1184514845426,
+        1034.972093754344
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 263
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.17.2",
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "Dataset/Molly/CUDA"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 72,
+      "type": "Power Lora Loader (rgthree)",
+      "pos": [
+        -895.4679621722386,
+        -468.180988782721
+      ],
+      "size": [
+        340.519921875,
+        190
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "dir": 3,
+          "name": "model",
+          "shape": 7,
+          "type": "MODEL",
+          "link": 81
+        },
+        {
+          "dir": 3,
+          "name": "clip",
+          "shape": 7,
+          "type": "CLIP",
+          "link": 152
+        }
+      ],
+      "outputs": [
+        {
+          "dir": 4,
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            82
+          ]
+        },
+        {
+          "dir": 4,
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            153
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "rgthree-comfy",
+        "ver": "1.0.2512112053",
+        "Show Strengths": "Single Strength",
+        "Match": "",
+        "Node name for S&R": "Power Lora Loader (rgthree)",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.7"
+        }
+      },
+      "widgets_values": [
+        {},
+        {
+          "type": "PowerLoraLoaderHeaderWidget"
+        },
+        {},
+        ""
+      ],
+      "color": "#332922",
+      "bgcolor": "#593930"
+    },
+    {
+      "id": 70,
+      "type": "KSampler",
+      "pos": [
+        -487.917271690334,
+        -473.9884586697962
+      ],
+      "size": [
+        210,
+        474
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 75
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 76
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 77
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 78
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [
+            213
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.64",
+        "Node name for S&R": "KSampler",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.7",
+          "input_ue_unconnectable": {}
+        },
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        867,
+        "fixed",
+        7,
+        1,
+        "euler_ancestral_cfg_pp",
+        "simple",
+        1
+      ],
+      "color": "#332922",
+      "bgcolor": "#593930"
+    },
+    {
+      "id": 159,
+      "type": "KSampler",
+      "pos": [
+        -23.13649030052568,
+        -473.9884586697962
+      ],
+      "size": [
+        210,
+        474
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 224
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 242
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 222
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 220
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            261
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.20.1",
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        9,
+        "fixed",
+        3,
+        3,
+        "dpmpp_2m",
+        "simple",
+        0.15
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 157,
+      "type": "KSampler",
+      "pos": [
+        -255.52688099542985,
+        -473.9884586697962
+      ],
+      "size": [
+        210,
+        474
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 214
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 229
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 215
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 213
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            220
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.20.1",
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        530,
+        "fixed",
+        4,
+        1.5,
+        "res_2s",
+        "simple",
+        0.35
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 100,
+      "type": "Display Any (rgthree)",
+      "pos": [
+        -1185.4280707730807,
+        -860.796884690519
+      ],
+      "size": [
+        624.6676909182677,
+        346.21324429508104
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "dir": 3,
+          "name": "source",
+          "type": "*",
+          "link": 155
+        }
+      ],
+      "outputs": [],
+      "title": "Global Prompt Preview",
+      "properties": {
+        "cnr_id": "rgthree-comfy",
+        "ver": "1.0.2604070017",
+        "Node name for S&R": "Display Any (rgthree)"
+      },
+      "widgets_values": [
+        "Create a highly consistent, photorealistic image of a 25-year-old Caucasian woman with naturally blonde hair, styled in a short, textured crop that frames her face with soft layers and subtle tousling. She has striking, bright blue eyes with a slightly almond-shaped structure, giving her a sharp yet approachable gaze. Her facial structure is defined with a high cheekbone structure, a slightly angular jawline, and a narrow nose with a gentle upward turn at the tip. Her lips are medium-sized, full, and slightly pinkish in tone, with a natural, well-groomed appearance.\n\nShe is of athletic build, standing at an average height (approximately 5'6\"), with a toned but not overly muscular physique. Her shoulders are slightly broad, and her arms and legs are lean but defined, showing signs of regular physical activity. Her posture is upright and confident, with a natural, relaxed stance. She has a slim waist and a proportional, hourglass figure with a defined but not exaggerated curve.\n\nHer skin is fair with a healthy, slightly sun-kissed tone, and has a smooth texture with minimal blemishes. Her facial features are well-proportioned and balanced, with a small, upturned nose and a soft, natural blush on her cheeks. Her eyebrows are naturally arched, slightly thick, and well-groomed, adding to her alert and expressive appearance.\n\nThe overall style should be photorealistic, with attention to detail in lighting, texture, and expression. She should appear approachable, confident, and youthful, with a modern, urban aesthetic. Use high-resolution rendering and natural lighting to enhance realism.\n\nshoulder-length hair in a ponytail.\n\nleather jacket over a fitted shirt with black jeans and boots\n\nwaist-up portrait, upper body framing\n\ngolden hour sunlight, long soft shadows\n\nhallway interior, residential setting\n\nleaning slightly, weight on one side\n\nsoft closed-mouth smile\n\nnatural perspective, eye-level camera"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 109,
+      "type": "b0192965-d531-421e-b128-d6f3efa78734",
+      "pos": [
+        -1579.9109511301162,
+        -473.4100122004552
+      ],
+      "size": [
+        377.48984109555977,
+        356.8345315192071
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "string",
+          "type": "STRING",
+          "links": [
+            155,
+            234
+          ]
+        }
+      ],
+      "properties": {
+        "proxyWidgets": [
+          [
+            "88",
+            "value"
+          ]
+        ],
+        "cnr_id": "comfy-core",
+        "ver": "0.19.5"
+      },
+      "widgets_values": [],
+      "color": "#232",
+      "bgcolor": "#353"
+    }
+  ],
+  "links": [
+    [
+      71,
+      67,
+      0,
+      64,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      75,
+      69,
+      0,
+      70,
+      0,
+      "MODEL"
+    ],
+    [
+      76,
+      67,
+      0,
+      70,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      77,
+      64,
+      0,
+      70,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      78,
+      68,
+      0,
+      70,
+      3,
+      "LATENT"
+    ],
+    [
+      81,
+      66,
+      0,
+      72,
+      0,
+      "MODEL"
+    ],
+    [
+      82,
+      72,
+      0,
+      69,
+      0,
+      "MODEL"
+    ],
+    [
+      152,
+      62,
+      0,
+      72,
+      1,
+      "CLIP"
+    ],
+    [
+      153,
+      72,
+      1,
+      67,
+      0,
+      "CLIP"
+    ],
+    [
+      155,
+      109,
+      0,
+      100,
+      0,
+      "STRING"
+    ],
+    [
+      213,
+      70,
+      0,
+      157,
+      3,
+      "LATENT"
+    ],
+    [
+      214,
+      69,
+      0,
+      157,
+      0,
+      "MODEL"
+    ],
+    [
+      215,
+      64,
+      0,
+      157,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      220,
+      157,
+      0,
+      159,
+      3,
+      "LATENT"
+    ],
+    [
+      222,
+      64,
+      0,
+      159,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      224,
+      69,
+      0,
+      159,
+      0,
+      "MODEL"
+    ],
+    [
+      226,
+      62,
+      0,
+      160,
+      0,
+      "CLIP"
+    ],
+    [
+      227,
+      160,
+      0,
+      161,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      228,
+      67,
+      0,
+      161,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      229,
+      161,
+      0,
+      157,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      231,
+      62,
+      0,
+      163,
+      0,
+      "CLIP"
+    ],
+    [
+      234,
+      109,
+      0,
+      67,
+      1,
+      "STRING"
+    ],
+    [
+      242,
+      163,
+      0,
+      159,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      261,
+      159,
+      0,
+      173,
+      0,
+      "LATENT"
+    ],
+    [
+      262,
+      63,
+      0,
+      173,
+      1,
+      "VAE"
+    ],
+    [
+      263,
+      173,
+      0,
+      76,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "definitions": {
+    "subgraphs": [
+      {
+        "id": "b0192965-d531-421e-b128-d6f3efa78734",
+        "version": 1,
+        "state": {
+          "lastGroupId": 0,
+          "lastNodeId": 179,
+          "lastLinkId": 273,
+          "lastRerouteId": 0
+        },
+        "revision": 0,
+        "config": {},
+        "name": "Prompt Generator",
+        "inputNode": {
+          "id": -10,
+          "bounding": [
+            -3283.313960431787,
+            -112.95589672608469,
+            128,
+            48
+          ]
+        },
+        "outputNode": {
+          "id": -20,
+          "bounding": [
+            -958.9278789515176,
+            214.48281016071692,
+            128,
+            67.99999999999997
+          ]
+        },
+        "inputs": [],
+        "outputs": [
+          {
+            "id": "ac8b28df-150b-44bc-a8df-01dcdcf139b4",
+            "name": "string",
+            "type": "STRING",
+            "linkIds": [
+              146,
+              146
+            ],
+            "localized_name": "string",
+            "pos": [
+              -934.9278789515176,
+              238.48281016071692
+            ]
+          }
+        ],
+        "widgets": [],
+        "nodes": [
+          {
+            "id": 147,
+            "type": "Text Random Line",
+            "pos": [
+              -1987.9579824594628,
+              118.61295251933507
+            ],
+            "size": [
+              210,
+              82
+            ],
+            "flags": {},
+            "order": 11,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "text",
+                "name": "text",
+                "type": "STRING",
+                "link": 193
+              },
+              {
+                "localized_name": "seed",
+                "name": "seed",
+                "type": "INT",
+                "widget": {
+                  "name": "seed"
+                },
+                "link": 208
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "STRING",
+                "name": "STRING",
+                "type": "STRING",
+                "links": [
+                  255
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "was-ns",
+              "ver": "3.0.1",
+              "Node name for S&R": "Text Random Line"
+            },
+            "widgets_values": [
+              1056112548794065,
+              "randomize"
+            ]
+          },
+          {
+            "id": 152,
+            "type": "Text Random Line",
+            "pos": [
+              -1987.9579824594628,
+              360.47522036697865
+            ],
+            "size": [
+              210,
+              82
+            ],
+            "flags": {},
+            "order": 12,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "text",
+                "name": "text",
+                "type": "STRING",
+                "link": 197
+              },
+              {
+                "localized_name": "seed",
+                "name": "seed",
+                "type": "INT",
+                "widget": {
+                  "name": "seed"
+                },
+                "link": 209
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "STRING",
+                "name": "STRING",
+                "type": "STRING",
+                "links": [
+                  254
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "was-ns",
+              "ver": "3.0.1",
+              "Node name for S&R": "Text Random Line"
+            },
+            "widgets_values": [
+              422397276317613,
+              "randomize"
+            ]
+          },
+          {
+            "id": 151,
+            "type": "Text Random Line",
+            "pos": [
+              -1987.9579824594628,
+              602.3374882146222
+            ],
+            "size": [
+              210,
+              82
+            ],
+            "flags": {},
+            "order": 13,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "text",
+                "name": "text",
+                "type": "STRING",
+                "link": 196
+              },
+              {
+                "localized_name": "seed",
+                "name": "seed",
+                "type": "INT",
+                "widget": {
+                  "name": "seed"
+                },
+                "link": 210
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "STRING",
+                "name": "STRING",
+                "type": "STRING",
+                "links": [
+                  253
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "was-ns",
+              "ver": "3.0.1",
+              "Node name for S&R": "Text Random Line"
+            },
+            "widgets_values": [
+              51883827764826,
+              "randomize"
+            ]
+          },
+          {
+            "id": 150,
+            "type": "Text Random Line",
+            "pos": [
+              -1987.9579824594628,
+              844.1997560622658
+            ],
+            "size": [
+              210,
+              82
+            ],
+            "flags": {},
+            "order": 14,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "text",
+                "name": "text",
+                "type": "STRING",
+                "link": 195
+              },
+              {
+                "localized_name": "seed",
+                "name": "seed",
+                "type": "INT",
+                "widget": {
+                  "name": "seed"
+                },
+                "link": 211
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "STRING",
+                "name": "STRING",
+                "type": "STRING",
+                "links": [
+                  252
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "was-ns",
+              "ver": "3.0.1",
+              "Node name for S&R": "Text Random Line"
+            },
+            "widgets_values": [
+              1064864626446672,
+              "randomize"
+            ]
+          },
+          {
+            "id": 138,
+            "type": "PrimitiveStringMultiline",
+            "pos": [
+              -2468.2740425232078,
+              602.3374882146222
+            ],
+            "size": [
+              446.1849459117036,
+              196.35214430058147
+            ],
+            "flags": {},
+            "order": 0,
+            "mode": 0,
+            "inputs": [],
+            "outputs": [
+              {
+                "localized_name": "STRING",
+                "name": "STRING",
+                "type": "STRING",
+                "links": [
+                  187,
+                  196
+                ]
+              }
+            ],
+            "title": "Location",
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.19.1",
+              "Node name for S&R": "PrimitiveStringMultiline"
+            },
+            "widgets_values": [
+              "indoor living room, casual home environment\ncozy living room, couch and coffee table\nmodern living room, natural light from windows\nsmall apartment living room, everyday setting\nbedroom interior, natural casual setting\nmessy bedroom, lived-in environment\ntidy bedroom, soft daylight through window\nbedroom with neutral decor, everyday scene\nkitchen interior, casual home setting\nhome kitchen, preparing food environment\nsmall kitchen, natural daylight\nmodern kitchen, clean surfaces and appliances\nbathroom interior, mirror and sink visible\nbathroom setting, soft indoor lighting\noffice interior, desk and chair setup\nhome office, computer desk and chair\nworkspace environment, casual office setting\nsmall office room, neutral decor\nhallway interior, residential setting\nstaircase in home, indoor environment\noutdoor park, trees and grass\npublic park, natural greenery\npark setting, walking path and trees\ngreen park environment, open space\nforest trail, natural setting\nwooded path, dappled sunlight\nforest environment, trees surrounding subject\ncity street, urban environment\nurban sidewalk, buildings in background\ndowntown street, casual city setting\nquiet residential street, suburban houses\nparking lot, open paved area\nstreet corner, urban everyday setting\ncafe interior, casual public space\ncoffee shop, tables and chairs\ncafe setting, warm indoor lighting\nrestaurant interior, dining setting\ncasual restaurant, seated environment\nstore interior, retail environment\nsmall shop interior, everyday setting\nbeach setting, sand and ocean\ncoastal beach, open sky and water\nbeach with dunes, natural coastal setting\nopen field, grassy landscape\nwide grassy field, natural environment\nbackyard, residential outdoor space\nsuburban backyard, fence and grass\nbalcony, outdoor elevated space\napartment balcony, city view background\ngym interior, workout environment\nfitness center, exercise equipment visible\nschool hallway, institutional setting\nclassroom interior, desks and chairs\nindustrial setting, warehouse interior\ngarage interior, tools and equipment\nstudio backdrop, plain neutral background\nsimple background, minimal environment\nhotel room interior, neutral furnished space\nsandy desert environment, harsh sun\na red sand beach with grassy dunes in the background\nneutral grey background\nneutral blue background\nsunlit reading nook, window seat with cushions\nliving room at night, warm lamplight\nliving room with fireplace, cozy evening setting\nopen concept living space, kitchen and living room combined\nloft apartment interior, high ceilings and large windows\nbasement living space, dim lighting\nattic room, sloped ceiling and small windows\nlaundry room, washer and dryer visible\nwalk-in closet, clothing racks and mirror\nbathroom with bathtub, tiled walls\nbathroom with shower stall, glass enclosure\npublic restroom, tiled interior\nkitchen at night, low warm lighting\nkitchen island setting, modern open layout\ndining room, table set for meal\nformal dining room, chandelier lighting\nbreakfast nook, morning sunlight\nhome bar area, bottles and counter\ngarage driveway, car parked nearby\nfront porch, residential entrance\nhouse entryway, coat rack and shoes\napartment hallway, indoor corridor\nelevator interior, mirrored walls\nrooftop terrace, city skyline view\nurban alleyway, brick walls and graffiti\nbusy city street, pedestrians and traffic\nnight city street, neon lights and reflections\ncrosswalk intersection, urban environment\nbus stop, bench and shelter\ntrain station platform, tracks visible\nsubway interior, public transit setting\nairport terminal, seating and gates\nairplane interior, passenger seating\nshopping mall interior, open atrium\nmall corridor, storefronts on both sides\nsupermarket interior, grocery aisles\nconvenience store, small retail environment\nbookstore interior, shelves of books\nlibrary interior, quiet reading space\nmuseum interior, gallery setting\nart gallery, white walls and exhibits\nmovie theater interior, rows of seats\narcade interior, colorful machines and lights\nbowling alley, lanes and seating\nnightclub interior, dance floor and lights\nbar interior, dim lighting and counter\ncoffee shop patio, outdoor seating\nrestaurant patio, outdoor dining\nfood court, multiple vendors and tables\nfarmer's market, outdoor stalls\nstreet market, vendors and tents\nfestival grounds, crowd and decorations\namusement park, rides and attractions\ncarnival setting, colorful booths\nzoo environment, enclosures and paths\naquarium interior, large water tanks\npark playground, swings and slides\nskate park, ramps and rails\nsports field, grass and goalposts\nbasketball court, outdoor hoops\ntennis court, fenced enclosure\nrunning track, stadium setting\nice rink, indoor skating arena\nski slope, snowy mountain setting\nsnowy forest, winter landscape\nfrozen lake, icy surface\nmountain trail, rocky terrain\ncliffside overlook, dramatic view\nwaterfall setting, mist and rocks\nriverbank, flowing water nearby\nlakeside dock, calm water\nmarshland, tall grasses and water\ntropical jungle, dense vegetation\nrainforest setting, humid and green\ndesert dunes, wind-shaped sand\nrocky desert canyon, layered cliffs\nvolcanic landscape, dark rock terrain\ncoastal cliffs, ocean waves below\nharbor setting, boats and docks\nmarina, yachts and water reflections\nboardwalk, seaside walkway\npier, extending over water\nfishing dock, rustic wooden structure\nlighthouse area, coastal landmark\ncampground, tents and fire pit\ncabin interior, rustic wood setting\nlog cabin exterior, forest surroundings\nglamping tent, cozy outdoor setup\nroadside stop, rural highway setting\ngas station, pumps and convenience store\nhighway rest stop, open paved area\nparking garage, multi-level concrete\nconstruction site, scaffolding and equipment\nfactory floor, industrial machinery\npower plant exterior, industrial structures\ndata center interior, server racks\nlaboratory interior, scientific equipment\ngreenhouse interior, plants and glass panels\nflorist shop, flowers and arrangements\nbakery interior, display cases and ovens\nbutcher shop, refrigerated display\nhair salon, chairs and mirrors\nbarbershop, classic grooming setting\ntattoo studio, chairs and artwork\nphotography studio, lighting equipment visible\nrecording studio, microphones and panels\ndance studio, mirrored walls and floor\nyoga studio, mats and calm lighting\nmartial arts dojo, mats and banners\nchurch interior, pews and stained glass\ncathedral interior, high ceilings\ncemetery, gravestones and paths\ncourtyard, enclosed outdoor space\nuniversity campus, academic buildings\ncollege dorm room, shared living space\nschool cafeteria, tables and trays\nlocker room, benches and lockers"
+            ],
+            "color": "#322",
+            "bgcolor": "#533"
+          },
+          {
+            "id": 137,
+            "type": "PrimitiveStringMultiline",
+            "pos": [
+              -2468.2740425232078,
+              360.4752203669787
+            ],
+            "size": [
+              446.1849459117036,
+              196.35214430058147
+            ],
+            "flags": {},
+            "order": 1,
+            "mode": 0,
+            "inputs": [],
+            "outputs": [
+              {
+                "localized_name": "STRING",
+                "name": "STRING",
+                "type": "STRING",
+                "links": [
+                  197
+                ]
+              }
+            ],
+            "title": "Lighting",
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.19.1",
+              "Node name for S&R": "PrimitiveStringMultiline"
+            },
+            "widgets_values": [
+              "natural daylight, soft ambient light\nnatural daylight, even lighting, no harsh shadows\nsoft natural window light, diffused\nwindow light from the side, soft shadows\nindirect daylight, gentle illumination\nbright sunny day, direct sunlight\nstrong sunlight, defined shadows\nharsh midday sun, high contrast shadows\ngolden hour lighting, warm soft glow\ngolden hour sunlight, long soft shadows\nsunset lighting, warm tones\nsunrise lighting, soft warm light\novercast daylight, flat soft lighting\ncloudy day, diffused light, low contrast\novercast sky, even illumination\nindoor ambient lighting, warm household light\nindoor room lighting, soft warm tones\npractical lighting from lamps, warm glow\nsoft studio lighting, even illumination\nsoft key light with gentle fill\nbalanced studio lighting, minimal shadows\nside lighting, directional light across face\nstrong side lighting, dramatic shadows\nsplit lighting, half face in shadow\nbacklighting, rim light around subject\nbacklit subject, glowing edges\nsunlight from behind, silhouette effect\ntop-down lighting, light from above\noverhead lighting, subtle shadows under features\nlow light scene, dim ambient light\nlow light indoor scene, soft shadows\nmoody low light, subdued tones\nneon lighting, colored highlights\nmixed colored lighting, subtle color cast\ncinematic lighting, dramatic contrast\nhigh contrast lighting, deep shadows\nharsh overhead lighting, unflattering shadows\ncool daylight, slightly blue tone\nneutral daylight, color balanced\nwarm indoor lighting, tungsten tone\nmixed lighting, warm interior and cool daylight\nfluorescent lighting, slightly green tint\noffice fluorescent lighting, flat illumination\nLED lighting, clean neutral tone\nscreen light illuminating face, dark surroundings\nmonitor glow, cool blue light on face\ncandlelight, flickering warm glow\nfirelight, warm uneven illumination\nstring lights, soft decorative glow\nfairy lights, subtle warm highlights\nlantern lighting, localized warm light\nstreetlight at night, orange sodium glow\nmoonlight, cool dim blue lighting\nnighttime ambient light, low visibility\ncar headlights, strong directional beams\nflashlight beam, focused cone of light\npolice lights, flashing red and blue highlights\nneon sign glow, colored edge lighting\ncyberpunk lighting, saturated neon colors\nclub lighting, strobe and colored beams\nstage lighting, spotlight on subject\nspotlight, isolated bright illumination\nrim lighting, strong edge highlight\nhair light, subtle glow on edges\nbounce lighting, soft reflected light\nreflected light from surface, subtle fill\nlight through curtains, diffused patterns\nwindow blinds casting striped shadows\ndappled sunlight, broken light through leaves\nlight rays through dust, visible beams\nvolumetric lighting, atmospheric light shafts\nfoggy lighting, softened highlights\nmisty environment, diffused glow\nrainy lighting, reflective wet surfaces\nwet pavement reflections, specular highlights\nsnowy environment, bright reflective light\nsand reflecting sunlight, warm bounce\nwater reflections, shimmering light patterns\nunderwater lighting, caustic light patterns\nunderwater scene, filtered blue-green light\nhigh key lighting, bright minimal shadows\nlow key lighting, dark moody contrast\nflat lighting, minimal depth\nbeauty lighting, smooth flattering light\nglamour lighting, soft highlights and glow\nfashion editorial lighting, stylized shadows\nproduct lighting, clean controlled highlights\nHDR lighting, extended dynamic range\noverexposed highlights, blown out whites\nunderexposed scene, crushed shadows\nlens flare, light artifacts across frame\nsun flare, warm streaks of light\nchromatic aberration from strong light\nbacklit haze, glowing atmosphere\nsilhouette lighting, subject in shadow\nedge-lit silhouette, thin rim highlights"
+            ],
+            "color": "#322",
+            "bgcolor": "#533"
+          },
+          {
+            "id": 139,
+            "type": "PrimitiveStringMultiline",
+            "pos": [
+              -2468.2740425232078,
+              844.1997560622659
+            ],
+            "size": [
+              446.1849459117036,
+              196.35214430058147
+            ],
+            "flags": {},
+            "order": 2,
+            "mode": 0,
+            "inputs": [],
+            "outputs": [
+              {
+                "localized_name": "STRING",
+                "name": "STRING",
+                "type": "STRING",
+                "links": [
+                  195
+                ]
+              }
+            ],
+            "title": "Action/Pose",
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.19.1",
+              "Node name for S&R": "PrimitiveStringMultiline"
+            },
+            "widgets_values": [
+              "standing naturally, relaxed posture\nstanding casually, arms at sides\nstanding upright, neutral pose\nstanding relaxed, slight weight shift\nstanding casually, one hip slightly tilted\nstanding with arms crossed\nstanding with hands in pockets\nstanding with hands clasped in front\nstanding with arms loosely at sides\nwalking forward, mid step\nwalking casually, natural stride\nwalking toward camera, mid movement\nwalking slowly, relaxed posture\nturning slightly, body angled to camera\nslight twist at the waist, relaxed pose\nbody angled, looking toward viewer\nleaning against a wall, relaxed\nleaning casually on a surface\nleaning slightly, weight on one side\nsitting on a chair, relaxed posture\nsitting casually, hands resting on lap\nseated upright, neutral pose\nsitting slightly slouched, natural posture\nsitting cross-legged, relaxed\nsitting with one leg crossed over the other\nseated with legs stretched slightly forward\nkneeling on the ground, upright posture\nkneeling casually, relaxed pose\ncrouching slightly, balanced stance\nsquatting casually, relaxed posture\nlying on back, relaxed pose\nlying on side, casual resting position\nlying on stomach, propped on elbows\nlooking over shoulder, slight turn\nglancing to the side, natural expression\nlooking downward, relaxed posture\nlooking upward slightly, neutral pose\nadjusting clothing, natural motion\nbrushing hair back with hand\ntucking hair behind ear\nholding an object casually\nholding phone, relaxed grip\nholding cup or drink, casual pose\ngesturing with one hand while speaking\nhands mid-gesture, conversational pose\narms raised slightly, stretching\nstretching arms overhead, casual movement\nmid-step motion, dynamic balance\nshifting weight from one foot to the other\nslight head tilt, relaxed expression\nsubtle posture shift, natural stance\nplayful pose, slight movement\nlight movement, candid posture\nawkward angle, slight distortion\ntired expression, neutral face\nstanding with one foot forward, casual stance\nstanding with weight on back foot, relaxed balance\nstanding with shoulders slightly hunched, casual posture\nstanding with hands behind back\nstanding with one arm resting across body\nstanding with one hand touching neck\nstanding with one hand on chest\nstanding with arms loosely folded\nstanding with one arm raised, adjusting sleeve\nleaning forward slightly, engaged posture\nleaning back slightly, relaxed stance\nleaning on railing, casual pose\nleaning on table with both hands\nleaning against doorway, casual stance\nsitting on edge of chair, slightly forward posture\nsitting sideways on chair, legs angled\nsitting with elbows on knees, relaxed\nsitting with chin resting on hand\nsitting with one leg tucked under\nsitting perched on surface, casual balance\nsitting on floor with knees up\nsitting against wall, relaxed posture\nlying on back, one arm behind head\nlying on side, head resting on hand\nlying on stomach, legs bent upward\nlying diagonally, relaxed composition\nreclining on couch, casual pose\nwalking away from camera, over shoulder glance\nwalking past camera, candid motion\nmid-turn while walking, dynamic pose\nstepping up or down, natural movement\nrunning lightly, casual motion\njogging, mid stride\nskipping playfully, light movement\nspinning slightly, playful motion\ntwirling hair while standing\nreaching upward, extended arm\nreaching forward, interacting with object\nreaching out to viewer, perspective pose\npointing casually, relaxed gesture\nhands on hips, confident stance\nhands clasped behind back, reserved posture\narms folded loosely, relaxed confidence\narms crossed tightly, closed posture\nholding jacket over shoulder\nadjusting sleeve or cuff\nadjusting waistband or belt\nfixing hair with both hands\nrunning fingers through hair\nholding bag or purse casually\nholding object close to chest\nholding drink near lips\nholding phone up as if taking photo\nresting chin on hand, thoughtful pose\ncovering mouth slightly, shy gesture\ntouching lips lightly, subtle gesture\nresting hand on cheek\nplayful lean forward, engaging posture\nslight bounce or shift, candid motion\nmid-laugh posture, natural movement\nreacting pose, slight recoil or surprise\nlooking directly at camera, engaged\nlooking past camera, distant focus\neyes half-closed, relaxed expression\neyes wide, attentive expression\nover-the-shoulder pose, turned torso\nthree-quarter body angle, portrait stance\nprofile view, side-facing pose\nclose-up framing, head and shoulders\nhands interacting with environment, touching surface\nresting hand on wall or object\ndragging fingers lightly along surface\nwind-blown pose, hair and clothing in motion\nslight stumble or off-balance pose\ndynamic twist, torso in motion"
+            ],
+            "color": "#322",
+            "bgcolor": "#533"
+          },
+          {
+            "id": 136,
+            "type": "PrimitiveStringMultiline",
+            "pos": [
+              -2468.2740425232078,
+              118.61295251933512
+            ],
+            "size": [
+              446.1849459117036,
+              196.35214430058147
+            ],
+            "flags": {},
+            "order": 3,
+            "mode": 0,
+            "inputs": [],
+            "outputs": [
+              {
+                "localized_name": "STRING",
+                "name": "STRING",
+                "type": "STRING",
+                "links": [
+                  185,
+                  193
+                ]
+              }
+            ],
+            "title": "Framing",
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.19.1",
+              "Node name for S&R": "PrimitiveStringMultiline"
+            },
+            "widgets_values": [
+              "full body shot, standing, entire figure visible head to toe\nfull body view, subject fully in frame from head to feet\nfull body portrait, centered, entire body visible\nwide full body shot, subject occupies most of frame\nfull body shot, slightly off-center composition\nthree-quarter body shot, from head to knees\nthree-quarter view, upper legs to head visible\nmid-length shot, framing from thighs up\nthree-quarter portrait, subject framed mid-thigh upward\nwaist-up portrait, upper body framing\nmedium shot, framed from waist to head\nwaist-up view, centered portrait framing\nmid shot, torso and head clearly visible\nchest-up portrait, bust shot\nbust portrait, chest and head in frame\ntight upper body shot, shoulders and head\nhead and shoulders portrait\nheadshot, face fills most of frame\ntight headshot, close framing on face\nclose-up portrait, face dominant in frame\nclose-up shot, facial details emphasized\nextreme close-up, eyes and face details\nextreme close-up portrait, partial face framing\nover-the-shoulder shot, subject turned slightly away\nover-the-shoulder view, partial back and face visible\nlow angle full body shot, camera looking upward\nhigh angle medium shot, camera looking downward\ncandid mid shot, slightly off-center framing\nnatural handheld framing, slight asymmetry\nwide establishing shot, environment dominates frame\nenvironmental portrait, subject small within scene\nfull body shot with negative space, subject offset\nfull body shot, subject framed near edge of frame\nthree-quarter shot, subject slightly off-center\nmedium shot, rule of thirds composition\nmedium shot, centered symmetrical composition\nmedium shot, subject framed to one side\nwaist-up portrait with negative space\ntight crop portrait, minimal background context\nloose crop portrait, extra space around subject\nheadshot with strong negative space\nclose-up with off-center composition\nextreme close-up, cropped asymmetrically\nprofile framing, subject facing sideways\nprofile close-up, face in side view\nsilhouette framing, subject outlined against background\nback view framing, subject facing away\nrear three-quarter view, partial back visible\noverhead framing, subject seen from above\ntop-down full body shot, flattened perspective\nlow angle close-up, dramatic perspective\nforeground framing, object partially obscuring subject\nframed through doorway, environmental border\nframed through window, layered composition\nframed by foliage, natural border\nframed by architecture, structural lines around subject\nsubject partially out of frame, cropped limbs\nintentional cutoff framing, artistic crop\ncandid framing, subject not centered\nsnapshot framing, slightly imperfect composition\ndynamic framing, subject mid-movement blur\nleading lines composition, environment guiding focus\ndepth layered framing, foreground midground background\nsubject framed between objects, visual corridor\nreflections in frame, mirror or glass composition\nmirror framing, subject seen via reflection\ndouble framing, subject and reflection both visible\ntight vertical crop, portrait orientation emphasis\nwide horizontal crop, cinematic framing\npanoramic framing, wide aspect ratio"
+            ],
+            "color": "#322",
+            "bgcolor": "#533"
+          },
+          {
+            "id": 146,
+            "type": "Text Random Line",
+            "pos": [
+              -1987.9579824594628,
+              -123.24931532830851
+            ],
+            "size": [
+              210,
+              82
+            ],
+            "flags": {
+              "collapsed": false
+            },
+            "order": 15,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "text",
+                "name": "text",
+                "type": "STRING",
+                "link": 192
+              },
+              {
+                "localized_name": "seed",
+                "name": "seed",
+                "type": "INT",
+                "widget": {
+                  "name": "seed"
+                },
+                "link": 207
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "STRING",
+                "name": "STRING",
+                "type": "STRING",
+                "links": [
+                  256
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "was-ns",
+              "ver": "3.0.1",
+              "Node name for S&R": "Text Random Line"
+            },
+            "widgets_values": [
+              152266352077627,
+              "randomize"
+            ]
+          },
+          {
+            "id": 101,
+            "type": "PrimitiveStringMultiline",
+            "pos": [
+              -1554.8428027283549,
+              426.8169235631352
+            ],
+            "size": [
+              210,
+              88
+            ],
+            "flags": {
+              "collapsed": true
+            },
+            "order": 4,
+            "mode": 0,
+            "inputs": [],
+            "outputs": [
+              {
+                "localized_name": "STRING",
+                "name": "STRING",
+                "type": "STRING",
+                "links": [
+                  139
+                ]
+              }
+            ],
+            "title": "Newline",
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.19.1",
+              "Node name for S&R": "PrimitiveStringMultiline"
+            },
+            "widgets_values": [
+              "\n\n"
+            ]
+          },
+          {
+            "id": 155,
+            "type": "PrimitiveInt",
+            "pos": [
+              -2784.8014756349303,
+              429.4229466894347
+            ],
+            "size": [
+              210,
+              82
+            ],
+            "flags": {},
+            "order": 5,
+            "mode": 0,
+            "inputs": [],
+            "outputs": [
+              {
+                "localized_name": "INT",
+                "name": "INT",
+                "type": "INT",
+                "links": [
+                  207,
+                  208,
+                  209,
+                  210,
+                  211,
+                  212,
+                  247,
+                  271
+                ]
+              }
+            ],
+            "title": "Random Seed",
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.19.5",
+              "Node name for S&R": "PrimitiveInt"
+            },
+            "widgets_values": [
+              65789292998739,
+              "randomize"
+            ]
+          },
+          {
+            "id": 135,
+            "type": "PrimitiveStringMultiline",
+            "pos": [
+              -2468.2740425232078,
+              -123.24931532830848
+            ],
+            "size": [
+              446.1849459117036,
+              196.35214430058147
+            ],
+            "flags": {},
+            "order": 6,
+            "mode": 0,
+            "inputs": [],
+            "outputs": [
+              {
+                "localized_name": "STRING",
+                "name": "STRING",
+                "type": "STRING",
+                "links": [
+                  192
+                ]
+              }
+            ],
+            "title": "outfit",
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.19.1",
+              "Node name for S&R": "PrimitiveStringMultiline"
+            },
+            "widgets_values": [
+              "casual t-shirt and jeans\noversized hoodie and leggings\nathletic sports bra and running shorts\nyoga outfit with fitted tank and leggings\nsummer sundress with sandals\ndenim jacket over a graphic tee and shorts\nbusiness casual blouse and slacks\nformal evening dress\ncocktail dress with heels\nleather jacket over a fitted shirt with black jeans and boots\ncozy sweater and knit scarf with jeans\ncrop top and high-waisted shorts\nplaid flannel shirt and denim jeans\ntank top and cargo pants\nbikini top with a sheer cover-up\none-piece swimsuit\nwinter coat with sweater underneath, gloves and scarf\npajamas with long sleeve top and pants\nsilk robe over lingerie top\nmaid outfit with apron and blouse\nschool uniform with blouse, skirt and blazer\ncheerleader outfit with fitted cheer top\npunk outfit with ripped jeans, chains, and a fitted band tee\ngothic dress with dark lace\nbohemian maxi dress with layered accessories\nfestival outfit with fringe top and shorts\noffice suit with blouse, blazer and pencil skirt\nmechanic coveralls over a t-shirt\napron over casual shirt and pants\njeans and a t-shirt\nshort sleeved cycling jersey and cycling shorts\ngym shorts and a tank top\nbusiness casual clothing with blouse or button-up shirt\nbutton-up shirt with rolled sleeves and chinos\nhoodie layered under a denim jacket with joggers\npuffer jacket with shirt underneath, leggings and sneakers\nlong trench coat over blouse and business attire\ncardigan over a camisole with skinny jeans\noff-shoulder sweater with leggings\nturtleneck sweater with a midi skirt\nknit dress with knee-high boots\nwrap dress with sandals\nmaxi skirt with a cropped blouse\nhigh-waisted trousers with a tucked-in blouse\nlinen shirt with drawstring shorts\nbeach cover-up dress over a swimsuit top\nrash guard with swim bottoms\nski jacket with thermal top underneath, snow pants and gloves\nraincoat over casual clothes with rubber boots\nathleisure set with sports top, zip-up jacket and leggings\ntennis outfit with pleated skirt and polo shirt\ngolf outfit with collared shirt and skirt or slacks\nhiking outfit with cargo shorts and a moisture-wicking shirt\nworkout leggings with a loose tank and hoodie tied at waist\ncompression shirt with athletic joggers\noversized graphic hoodie with bike shorts\nstreetwear outfit with bomber jacket, shirt and ripped jeans\nvarsity jacket with t-shirt, jeans and sneakers\ntracksuit with matching jacket and pants\ncargo jacket with a crop top and cargo pants\nutility vest over a long sleeve shirt and pants\nmilitary-inspired outfit with fitted jacket, shirt and boots\nconstruction outfit with safety vest, t-shirt and work pants\nlab coat over professional blouse and attire\nchef outfit with chef coat, apron and hat\nbarista outfit with apron, shirt and rolled sleeves\nnurse scrubs\ndoctor outfit with white coat, shirt and slacks\nartist outfit with paint-splattered overalls and t-shirt\ngardening outfit with t-shirt, gloves and sun hat\noveralls with a striped shirt underneath\nromper with sandals\njumpsuit with a belt and boots\nevening gown with a shawl\nvelvet dress with long sleeves\nlace top with a pencil skirt\nsheer blouse over a bralette with trousers\nhalter top with a flowing skirt\ncorset top with a layered skirt\nfestival outfit with mesh top, fishnets and platform boots\nrave outfit with neon crop top and shorts\ncyberpunk outfit with glowing jacket and fitted top\nfuturistic bodysuit with metallic textures\nsteampunk outfit with corset, blouse and goggles\nfantasy armor-inspired outfit with armored chestpiece\nmage robe with layered fabrics and inner tunic\nelf-inspired outfit with flowing fabrics and fitted top\npirate outfit with blouse and boots\ncowgirl outfit with hat, denim shirt and boots\nwestern outfit with plaid shirt and jeans\nretro 1950s dress with polka dots\n80s workout outfit with leotard, leg warmers and jacket\n90s grunge outfit with oversized flannel, t-shirt and ripped jeans\ny2k outfit with baby tee and low-rise jeans\nminimalist monochrome outfit with fitted top and trousers\nall-black outfit with layered textures and black top\nall-white summer outfit with lightweight blouse and shorts\ncolor-blocked streetwear outfit with hoodie and joggers\nbusiness formal suit with tailored blazer, blouse and trousers\nloose-fit suit with shirt and sneakers\ndouble-breasted blazer with blouse and dress pants\nevening tuxedo-inspired outfit with dress shirt\npajama set with shorts and button-up top\nloungewear set with soft knit fabric and lounge top\nrobe over sleepwear top with slippers\nlingerie-inspired outfit with bodysuit and stockings\nbridal dress with veil\nbridesmaid dress in soft tones\ndate night outfit with fitted dress and heels\ncasual date outfit with blouse and jeans\nairport outfit with hoodie, t-shirt, leggings and sneakers\ntravel outfit with layered comfort wear and fitted top"
+            ],
+            "color": "#322",
+            "bgcolor": "#533"
+          },
+          {
+            "id": 88,
+            "type": "PrimitiveStringMultiline",
+            "pos": [
+              -2468.2740425232078,
+              -606.9738510235957
+            ],
+            "size": [
+              446.1849459117036,
+              196.35214430058147
+            ],
+            "flags": {},
+            "order": 7,
+            "mode": 0,
+            "inputs": [],
+            "outputs": [
+              {
+                "localized_name": "STRING",
+                "name": "STRING",
+                "type": "STRING",
+                "links": [
+                  257
+                ]
+              }
+            ],
+            "title": "Core",
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.19.1",
+              "Node name for S&R": "PrimitiveStringMultiline"
+            },
+            "widgets_values": [
+              "Create a highly consistent, photorealistic image of a 25-year-old Caucasian woman with naturally blonde hair, styled in a short, textured crop that frames her face with soft layers and subtle tousling. She has striking, bright blue eyes with a slightly almond-shaped structure, giving her a sharp yet approachable gaze. Her facial structure is defined with a high cheekbone structure, a slightly angular jawline, and a narrow nose with a gentle upward turn at the tip. Her lips are medium-sized, full, and slightly pinkish in tone, with a natural, well-groomed appearance.\n\nShe is of athletic build, standing at an average height (approximately 5'6\"), with a toned but not overly muscular physique. Her shoulders are slightly broad, and her arms and legs are lean but defined, showing signs of regular physical activity. Her posture is upright and confident, with a natural, relaxed stance. She has a slim waist and a proportional, hourglass figure with a defined but not exaggerated curve.\n\nHer skin is fair with a healthy, slightly sun-kissed tone, and has a smooth texture with minimal blemishes. Her facial features are well-proportioned and balanced, with a small, upturned nose and a soft, natural blush on her cheeks. Her eyebrows are naturally arched, slightly thick, and well-groomed, adding to her alert and expressive appearance.\n\nThe overall style should be photorealistic, with attention to detail in lighting, texture, and expression. She should appear approachable, confident, and youthful, with a modern, urban aesthetic. Use high-resolution rendering and natural lighting to enhance realism."
+            ],
+            "color": "#232",
+            "bgcolor": "#353"
+          },
+          {
+            "id": 170,
+            "type": "PrimitiveStringMultiline",
+            "pos": [
+              -2468.2740425232078,
+              -365.1115831759521
+            ],
+            "size": [
+              446.1849459117036,
+              196.35214430058147
+            ],
+            "flags": {},
+            "order": 8,
+            "mode": 0,
+            "inputs": [],
+            "outputs": [
+              {
+                "localized_name": "STRING",
+                "name": "STRING",
+                "type": "STRING",
+                "links": [
+                  246
+                ]
+              }
+            ],
+            "title": "Hairstyle",
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.19.1",
+              "Node name for S&R": "PrimitiveStringMultiline"
+            },
+            "widgets_values": [
+              "shoulder-length hair in a messy bun.\nshoulder-length hair in a ponytail.\nshoulder-length hair in low pigtails.\nshoulder-length hair in an elegant up-do.\nshoulder-length wavy hair, loose.\nshoulder-length wavy hair, loose.\nshoulder-length wavy hair, loose.\nshoulder-length wavy hair, loose.\nshoulder-length wavy hair, loose.\nshoulder-length wavy hair, loose.\nshoulder-length wavy hair, loose.\nshoulder-length wavy hair, loose."
+            ],
+            "color": "#322",
+            "bgcolor": "#533"
+          },
+          {
+            "id": 171,
+            "type": "Text Random Line",
+            "pos": [
+              -1987.9579824594628,
+              -365.1115831759521
+            ],
+            "size": [
+              210,
+              82
+            ],
+            "flags": {},
+            "order": 16,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "text",
+                "name": "text",
+                "type": "STRING",
+                "link": 246
+              },
+              {
+                "localized_name": "seed",
+                "name": "seed",
+                "type": "INT",
+                "widget": {
+                  "name": "seed"
+                },
+                "link": 247
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "STRING",
+                "name": "STRING",
+                "type": "STRING",
+                "links": [
+                  250
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "was-ns",
+              "ver": "3.0.1",
+              "Node name for S&R": "Text Random Line"
+            },
+            "widgets_values": [
+              956661231192964,
+              "randomize"
+            ]
+          },
+          {
+            "id": 140,
+            "type": "PrimitiveStringMultiline",
+            "pos": [
+              -2463.482538325653,
+              1334.6948127707683
+            ],
+            "size": [
+              446.1849459117036,
+              196.35214430058147
+            ],
+            "flags": {},
+            "order": 9,
+            "mode": 0,
+            "inputs": [],
+            "outputs": [
+              {
+                "localized_name": "STRING",
+                "name": "STRING",
+                "type": "STRING",
+                "links": [
+                  189,
+                  194
+                ]
+              }
+            ],
+            "title": "Lens/Camera",
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.19.1",
+              "Node name for S&R": "PrimitiveStringMultiline"
+            },
+            "widgets_values": [
+              "shot on smartphone camera\ncaptured with wide angle lens\nslight lens distortion at edges\ntelephoto compression, flattened background\nnatural perspective, eye-level camera\nslightly low camera angle\nslightly high camera angle\nclose camera distance, intimate framing\nfar camera distance, subject smaller in frame\nshot on DSLR camera\nshot on mirrorless camera\nshot on film camera\n35mm film look, subtle grain\ninstant camera look, soft colors\ncinematic camera look, shallow depth of field\nultra wide angle lens, exaggerated perspective\nwide angle lens, slight perspective distortion\nstandard lens, natural perspective\n50mm lens look, balanced perspective\n85mm portrait lens, flattering compression\n135mm telephoto lens, strong background compression\nmacro lens, extreme close-up detail\nclose-up shot, face fills frame\nmedium shot, waist up framing\nfull body shot, subject fully visible\nwide shot, subject small in frame\nshallow depth of field, blurred background\nvery shallow depth of field, strong bokeh\ndeep depth of field, everything in focus\nbackground softly out of focus\nforeground blur, depth layering\nsharp focus on eyes, crisp detail\nsoft focus, slightly diffused detail\nintentional motion blur, dynamic feel\nsubject in motion blur, background sharp\npanning shot, subject sharp background streaked\nhigh resolution image, crisp detail\nslight noise, low light grain\nvisible film grain, textured look\ncompression artifacts, low quality capture\nlens flare, light streaks across lens\nsubtle lens flare, natural effect\nchromatic aberration at edges\nvignetting, darker corners\nheavy vignetting, strong edge darkening\noverhead shot, top-down perspective\nlow angle shot, looking up at subject\nhigh angle shot, looking down at subject\ndutch angle, tilted camera\noff-center framing, rule of thirds\ncentered composition, symmetrical framing\nover-the-shoulder shot, partial foreground subject\npoint of view shot, first person perspective\nselfie angle, arm’s length perspective\nmirror shot, reflection visible\nsubject framed through doorway or window\nforeground object partially obscuring frame\nframed by environment, natural borders\ntight crop, minimal background\nloose framing, extra space around subject\nnegative space composition, subject offset\nback camera flash, harsh direct light\nfront camera flash, flat illumination"
+            ],
+            "color": "#322",
+            "bgcolor": "#533"
+          },
+          {
+            "id": 149,
+            "type": "Text Random Line",
+            "pos": [
+              -1983.166478261908,
+              1334.6948127707683
+            ],
+            "size": [
+              210,
+              82
+            ],
+            "flags": {},
+            "order": 17,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "text",
+                "name": "text",
+                "type": "STRING",
+                "link": 194
+              },
+              {
+                "localized_name": "seed",
+                "name": "seed",
+                "type": "INT",
+                "widget": {
+                  "name": "seed"
+                },
+                "link": 212
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "STRING",
+                "name": "STRING",
+                "type": "STRING",
+                "links": [
+                  272
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "was-ns",
+              "ver": "3.0.1",
+              "Node name for S&R": "Text Random Line"
+            },
+            "widgets_values": [
+              167772576733075,
+              "randomize"
+            ]
+          },
+          {
+            "id": 105,
+            "type": "JoinStringMulti",
+            "pos": [
+              -1409.1068441063635,
+              130.2967769366742
+            ],
+            "size": [
+              270,
+              290
+            ],
+            "flags": {},
+            "order": 19,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "string_1",
+                "name": "string_1",
+                "type": "STRING",
+                "link": 257
+              },
+              {
+                "localized_name": "string_2",
+                "name": "string_2",
+                "shape": 7,
+                "type": "STRING",
+                "link": 250
+              },
+              {
+                "localized_name": "delimiter",
+                "name": "delimiter",
+                "type": "STRING",
+                "widget": {
+                  "name": "delimiter"
+                },
+                "link": 139
+              },
+              {
+                "name": "string_3",
+                "shape": 7,
+                "type": "STRING",
+                "link": 256
+              },
+              {
+                "name": "string_4",
+                "shape": 7,
+                "type": "STRING",
+                "link": 255
+              },
+              {
+                "name": "string_5",
+                "shape": 7,
+                "type": "STRING",
+                "link": 254
+              },
+              {
+                "name": "string_6",
+                "shape": 7,
+                "type": "STRING",
+                "link": 253
+              },
+              {
+                "name": "string_7",
+                "shape": 7,
+                "type": "STRING",
+                "link": 252
+              },
+              {
+                "name": "string_8",
+                "shape": 7,
+                "type": "STRING",
+                "link": 273
+              },
+              {
+                "name": "string_9",
+                "shape": 7,
+                "type": "STRING",
+                "link": 272
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "string",
+                "name": "string",
+                "type": "STRING",
+                "links": [
+                  146
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfyui-kjnodes",
+              "ver": "1.3.7",
+              "Node name for S&R": "JoinStringMulti"
+            },
+            "widgets_values": [
+              9,
+              " ",
+              false,
+              null
+            ],
+            "color": "#223",
+            "bgcolor": "#335"
+          },
+          {
+            "id": 179,
+            "type": "Text Random Line",
+            "pos": [
+              -1986.3433849372773,
+              1087.0506592206277
+            ],
+            "size": [
+              210,
+              82
+            ],
+            "flags": {},
+            "order": 18,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "text",
+                "name": "text",
+                "type": "STRING",
+                "link": 270
+              },
+              {
+                "localized_name": "seed",
+                "name": "seed",
+                "type": "INT",
+                "widget": {
+                  "name": "seed"
+                },
+                "link": 271
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "STRING",
+                "name": "STRING",
+                "type": "STRING",
+                "links": [
+                  273
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "was-ns",
+              "ver": "3.0.1",
+              "Node name for S&R": "Text Random Line"
+            },
+            "widgets_values": [
+              582814458121030,
+              "randomize"
+            ]
+          },
+          {
+            "id": 178,
+            "type": "PrimitiveStringMultiline",
+            "pos": [
+              -2466.6594450010207,
+              1087.0506592206277
+            ],
+            "size": [
+              446.1849459117036,
+              196.35214430058147
+            ],
+            "flags": {},
+            "order": 10,
+            "mode": 0,
+            "inputs": [],
+            "outputs": [
+              {
+                "localized_name": "STRING",
+                "name": "STRING",
+                "type": "STRING",
+                "links": [
+                  270
+                ]
+              }
+            ],
+            "title": "Expression",
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.19.1",
+              "Node name for S&R": "PrimitiveStringMultiline"
+            },
+            "widgets_values": [
+              "neutral expression\nneutral expression\nneutral expression\nneutral expression\nslight smile\nslight smile\nslight smile\nslight smile\nsoft closed-mouth smile\nsoft closed-mouth smile\nsoft closed-mouth smile\ngentle amused smile\ngentle amused smile\ngentle amused smile\nsmall tired smile\nsmall tired smile\nawkward smile\nawkward smile\nslightly uneven smile\nslightly uneven smile\nslightly uneven smile\nwarm friendly expression\nwarm friendly expression\nwarm friendly expression\ncalm relaxed expression\ncalm relaxed expression\ncalm relaxed expression\nthoughtful expression\nthoughtful expression\nthoughtful expression\nquietly happy expression\nquietly happy expression\nsubtle curiosity\nsubtle curiosity\nsubtle curiosity\nmildly embarrassed expression\nmildly embarrassed expression\nbashful smile\nbashful smile\nsleepy expression\nsleepy expression\nslightly distracted expression\nslightly distracted expression\nlooking off thoughtfully\nlooking off thoughtfully\nsoft laugh\nsoft laugh\nmid-conversation candid expression\nmid-conversation candid expression\nmid-conversation candid expression\nslightly skeptical expression\nslightly skeptical expression\nconfused expression\nmild concern\nsurprised expression\nfaint smirk\ntrying not to laugh\nblank tired stare\ngenuine laugh\neyes widened slightly in surprise\nfocused expression\nslightly annoyed expression\nsoft nostalgic expression\nsubtle sadness\nlooking down shyly\ngentle affectionate expression\nresting face, candid moment\ncaught off guard expression\nslightly self-conscious expression\nrelaxed candid expression\nrelaxed candid expression\nrelaxed candid expression\nsoft contemplative expression\nsoft contemplative expression\nemotionally vulnerable expression\nquiet introspective mood\nslightly awkward candid expression\nlooking at viewer with hesitant smile\nlooking away with faint smile\nhalf-smile while thinking\nsubtle raised eyebrow\nfaintly puzzled expression\nmildly overwhelmed expression\ntrying to stay serious\nsoft emotional expression\nfatigued but content expression\n"
+            ],
+            "color": "#322",
+            "bgcolor": "#533"
+          }
+        ],
+        "groups": [],
+        "links": [
+          {
+            "id": 139,
+            "origin_id": 101,
+            "origin_slot": 0,
+            "target_id": 105,
+            "target_slot": 2,
+            "type": "STRING"
+          },
+          {
+            "id": 146,
+            "origin_id": 105,
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 0,
+            "type": "STRING"
+          },
+          {
+            "id": 185,
+            "origin_id": 136,
+            "origin_slot": 0,
+            "target_id": 143,
+            "target_slot": 1,
+            "type": "STRING"
+          },
+          {
+            "id": 187,
+            "origin_id": 138,
+            "origin_slot": 0,
+            "target_id": 143,
+            "target_slot": 2,
+            "type": "STRING"
+          },
+          {
+            "id": 189,
+            "origin_id": 140,
+            "origin_slot": 0,
+            "target_id": 143,
+            "target_slot": 3,
+            "type": "STRING"
+          },
+          {
+            "id": 192,
+            "origin_id": 135,
+            "origin_slot": 0,
+            "target_id": 146,
+            "target_slot": 0,
+            "type": "STRING"
+          },
+          {
+            "id": 193,
+            "origin_id": 136,
+            "origin_slot": 0,
+            "target_id": 147,
+            "target_slot": 0,
+            "type": "STRING"
+          },
+          {
+            "id": 194,
+            "origin_id": 140,
+            "origin_slot": 0,
+            "target_id": 149,
+            "target_slot": 0,
+            "type": "STRING"
+          },
+          {
+            "id": 195,
+            "origin_id": 139,
+            "origin_slot": 0,
+            "target_id": 150,
+            "target_slot": 0,
+            "type": "STRING"
+          },
+          {
+            "id": 196,
+            "origin_id": 138,
+            "origin_slot": 0,
+            "target_id": 151,
+            "target_slot": 0,
+            "type": "STRING"
+          },
+          {
+            "id": 197,
+            "origin_id": 137,
+            "origin_slot": 0,
+            "target_id": 152,
+            "target_slot": 0,
+            "type": "STRING"
+          },
+          {
+            "id": 207,
+            "origin_id": 155,
+            "origin_slot": 0,
+            "target_id": 146,
+            "target_slot": 1,
+            "type": "INT"
+          },
+          {
+            "id": 208,
+            "origin_id": 155,
+            "origin_slot": 0,
+            "target_id": 147,
+            "target_slot": 1,
+            "type": "INT"
+          },
+          {
+            "id": 209,
+            "origin_id": 155,
+            "origin_slot": 0,
+            "target_id": 152,
+            "target_slot": 1,
+            "type": "INT"
+          },
+          {
+            "id": 210,
+            "origin_id": 155,
+            "origin_slot": 0,
+            "target_id": 151,
+            "target_slot": 1,
+            "type": "INT"
+          },
+          {
+            "id": 211,
+            "origin_id": 155,
+            "origin_slot": 0,
+            "target_id": 150,
+            "target_slot": 1,
+            "type": "INT"
+          },
+          {
+            "id": 212,
+            "origin_id": 155,
+            "origin_slot": 0,
+            "target_id": 149,
+            "target_slot": 1,
+            "type": "INT"
+          },
+          {
+            "id": 246,
+            "origin_id": 170,
+            "origin_slot": 0,
+            "target_id": 171,
+            "target_slot": 0,
+            "type": "STRING"
+          },
+          {
+            "id": 247,
+            "origin_id": 155,
+            "origin_slot": 0,
+            "target_id": 171,
+            "target_slot": 1,
+            "type": "INT"
+          },
+          {
+            "id": 250,
+            "origin_id": 171,
+            "origin_slot": 0,
+            "target_id": 105,
+            "target_slot": 1,
+            "type": "STRING"
+          },
+          {
+            "id": 252,
+            "origin_id": 150,
+            "origin_slot": 0,
+            "target_id": 105,
+            "target_slot": 7,
+            "type": "STRING"
+          },
+          {
+            "id": 253,
+            "origin_id": 151,
+            "origin_slot": 0,
+            "target_id": 105,
+            "target_slot": 6,
+            "type": "STRING"
+          },
+          {
+            "id": 254,
+            "origin_id": 152,
+            "origin_slot": 0,
+            "target_id": 105,
+            "target_slot": 5,
+            "type": "STRING"
+          },
+          {
+            "id": 255,
+            "origin_id": 147,
+            "origin_slot": 0,
+            "target_id": 105,
+            "target_slot": 4,
+            "type": "STRING"
+          },
+          {
+            "id": 256,
+            "origin_id": 146,
+            "origin_slot": 0,
+            "target_id": 105,
+            "target_slot": 3,
+            "type": "STRING"
+          },
+          {
+            "id": 257,
+            "origin_id": 88,
+            "origin_slot": 0,
+            "target_id": 105,
+            "target_slot": 0,
+            "type": "STRING"
+          },
+          {
+            "id": 270,
+            "origin_id": 178,
+            "origin_slot": 0,
+            "target_id": 179,
+            "target_slot": 0,
+            "type": "STRING"
+          },
+          {
+            "id": 271,
+            "origin_id": 155,
+            "origin_slot": 0,
+            "target_id": 179,
+            "target_slot": 1,
+            "type": "INT"
+          },
+          {
+            "id": 272,
+            "origin_id": 149,
+            "origin_slot": 0,
+            "target_id": 105,
+            "target_slot": 9,
+            "type": "STRING"
+          },
+          {
+            "id": 273,
+            "origin_id": 179,
+            "origin_slot": 0,
+            "target_id": 105,
+            "target_slot": 8,
+            "type": "STRING"
+          }
+        ],
+        "extra": {}
+      }
+    ]
+  },
+  "config": {},
+  "extra": {
+    "frontendVersion": "1.43.18",
+    "workflowRendererVersion": "LG",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": false,
+    "VHS_KeepIntermediate": false,
+    "ue_links": [],
+    "links_added_by_ue": [],
+    "ds": {
+      "scale": 0.620921323059155,
+      "offset": [
+        1838.1138479071685,
+        831.79700410415
+      ]
+    }
+  },
+  "version": 0.4
+}
