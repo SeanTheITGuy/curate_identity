@@ -46,6 +46,7 @@ On first run it will download the models required, then it will create an identi
 ```
 
 In this small example set, I would probably do something like:
+
 `python ./curate_identity.py --refs refs/ --input gens/ --output sorted/ --approved-threshold 0.73 --review-threshold 0.7`
 
 Removing the `--dry-run` will copy the `gens/` data into the `sorted/` directory appropriately. Review the "review" ones, and if they look similar enough to you, copy them to approved. Images flagged for "review" are often ones that match facial likeness, but are in a different position, framing, or partially obscured. These are good additions to a dataset.
